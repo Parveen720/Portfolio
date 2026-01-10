@@ -1,21 +1,37 @@
-/* ============= CSS Variables ============= */
+
+/* ============= CSS Variables (CYAN THEME) ============= */
 :root {
-  --background: hsl(35, 50%, 96%);
-  --foreground: hsl(20, 20%, 15%);
-  --card: hsl(35, 40%, 98%);
-  --card-foreground: hsl(20, 20%, 15%);
-  --primary: hsl(25, 95%, 53%);
+  --background: hsl(190, 40%, 96%);
+  --foreground: hsl(200, 25%, 15%);
+
+  --card: hsl(190, 35%, 98%);
+  --card-foreground: hsl(200, 25%, 15%);
+
+  /* PRIMARY CYAN */
+  --primary: hsl(190, 85%, 45%);
   --primary-foreground: hsl(0, 0%, 100%);
-  --secondary: hsl(35, 30%, 92%);
-  --secondary-foreground: hsl(20, 20%, 15%);
-  --muted: hsl(35, 20%, 90%);
-  --muted-foreground: hsl(20, 10%, 45%);
-  --border: hsl(35, 25%, 88%);
+
+  --secondary: hsl(190, 35%, 92%);
+  --secondary-foreground: hsl(200, 25%, 15%);
+
+  --muted: hsl(190, 20%, 90%);
+  --muted-foreground: hsl(200, 15%, 45%);
+
+  --border: hsl(190, 25%, 85%);
   --radius: 0.75rem;
-  --gradient-primary: linear-gradient(135deg, hsl(25, 95%, 53%) 0%, hsl(35, 95%, 60%) 100%);
-  --shadow-card: 0 10px 40px hsla(25, 30%, 50%, 0.1);
-  --shadow-card-hover: 0 20px 60px hsla(25, 30%, 50%, 0.2);
+
+  /* CYAN GRADIENT */
+  --gradient-primary: linear-gradient(
+    135deg,
+    hsl(190, 85%, 45%) 0%,
+    hsl(200, 90%, 55%) 100%
+  );
+
+  /* CYAN SHADOWS */
+  --shadow-card: 0 10px 40px hsla(190, 70%, 40%, 0.12);
+  --shadow-card-hover: 0 20px 60px hsla(190, 70%, 40%, 0.25);
 }
+
 
 /* ============= Reset & Base ============= */
 *, *::before, *::after {
@@ -39,9 +55,10 @@ body {
 }
 
 ::selection {
-  background-color: hsla(25, 95%, 53%, 0.3);
+  background-color: hsla(190, 85%, 45%, 0.25);
   color: var(--foreground);
 }
+
 
 a {
   text-decoration: none;
@@ -113,13 +130,15 @@ img {
   font-size: 0.875rem;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 20px hsla(25, 95%, 53%, 0.4);
+  box-shadow: 0 4px 20px hsla(190, 85%, 45%, 0.35);
   transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 30px hsla(25, 95%, 53%, 0.5);
+  box-shadow: 0 6px 30px hsla(190, 85%, 45%, 0.5);
+
+
 }
 
 .btn-outline {
@@ -209,7 +228,7 @@ img {
 }
 
 .navbar.scrolled {
-  background: hsla(35, 50%, 96%, 0.95);
+ background: hsla(190, 40%, 96%, 0.95);
   backdrop-filter: blur(12px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
@@ -359,7 +378,7 @@ img {
   justify-content: center;
   font-size: 15vw;
   font-weight: 700;
-  color: hsla(25, 95%, 53%, 0.05);
+  color: hsla(190, 85%, 45%, 0.06); 
   white-space: nowrap;
   pointer-events: none;
   user-select: none;
@@ -371,7 +390,7 @@ img {
   right: 5rem;
   width: 5rem;
   height: 5rem;
-  color: hsla(25, 95%, 53%, 0.3);
+  color: hsla(190, 85%, 45%, 0.3);
   animation: floatSlow 6s ease-in-out infinite;
 }
 
@@ -389,7 +408,8 @@ img {
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 50%;
-  background: hsla(25, 95%, 53%, 0.4);
+  background: hsla(190, 85%, 45%, 0.4);
+
 }
 
 @media (max-width: 1024px) {
@@ -512,7 +532,7 @@ img {
 
 .social-link:hover {
   color: var(--primary);
-  background: hsla(25, 95%, 53%, 0.1);
+  background: hsla(190, 85%, 45%, 0.1);
 }
 
 .profile-image-wrapper {
@@ -525,7 +545,12 @@ img {
 .profile-glow {
   position: absolute;
   inset: -1rem;
-  background: linear-gradient(135deg, hsla(25, 95%, 53%, 0.2), transparent);
+  background: linear-gradient(
+  135deg,
+  hsla(190, 85%, 45%, 0.25),
+  transparent
+);
+
   border-radius: 50%;
   filter: blur(40px);
 }
@@ -536,7 +561,7 @@ img {
   height: 16rem;
   border-radius: 50%;
   overflow: hidden;
-  border: 4px solid hsla(25, 95%, 53%, 0.2);
+ border: 4px solid hsla(200, 80%, 40%, 0.25);
   background: linear-gradient(135deg, var(--secondary), var(--muted));
   display: flex;
   align-items: center;
@@ -597,7 +622,7 @@ img {
   top: -2rem;
   left: 50%;
   transform: translateX(-50%);
-  color: hsla(25, 95%, 53%, 0.6);
+  color: hsla(195, 90%, 55%, 0.6);
 }
 
 /* Tech Marquee */
@@ -607,7 +632,7 @@ img {
   left: 0;
   right: 0;
   padding: 1.5rem 0;
-  background: hsla(35, 40%, 98%, 0.8);
+  background: hsla(195, 60%, 95%, 0.85); 
   backdrop-filter: blur(8px);
   border-top: 1px solid var(--border);
   overflow: hidden;
@@ -665,7 +690,11 @@ img {
   max-width: 24rem;
   margin: 0 auto;
   aspect-ratio: 1;
-  background: linear-gradient(135deg, hsla(25, 95%, 53%, 0.1), var(--secondary));
+  background: linear-gradient(
+    135deg,
+    hsla(195, 90%, 60%, 0.15),
+    hsla(200, 80%, 95%, 1)
+  );
   border-radius: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -679,11 +708,12 @@ img {
   height: 8rem;
   margin-bottom: 1.5rem;
   border-radius: 50%;
-  background: hsla(25, 95%, 53%, 0.1);
+  background: hsla(195, 90%, 60%, 0.15);
+  color: #0096c7;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--primary);
+  
 }
 
 .about-badge {
@@ -704,7 +734,7 @@ img {
   right: -1.5rem;
   width: 6rem;
   height: 6rem;
-  background: hsla(25, 95%, 53%, 0.2);
+  background: hsla(195, 90%, 60%, 0.25);
   border-radius: 1rem;
   z-index: -1;
 }
@@ -715,7 +745,7 @@ img {
   left: -1.5rem;
   width: 4rem;
   height: 4rem;
-  background: var(--secondary);
+   background: hsla(200, 80%, 92%, 1);
   border-radius: 1rem;
   z-index: -1;
 }
@@ -745,14 +775,15 @@ img {
 }
 
 .education-card:hover {
-  border-color: hsla(25, 95%, 53%, 0.3);
+  border-color: hsla(195, 90%, 55%, 0.35);
 }
 
 .education-icon {
   padding: 0.75rem;
-  background: hsla(25, 95%, 53%, 0.1);
+   background: hsla(195, 90%, 60%, 0.15);
+  color: #0096c7;
   border-radius: 0.5rem;
-  color: var(--primary);
+  
 }
 
 .education-info h4 {
@@ -762,7 +793,7 @@ img {
 }
 
 .education-school {
-  color: var(--primary);
+  color: #0077b6;
   font-weight: 500;
   font-size: 0.875rem;
 }
@@ -790,7 +821,7 @@ img {
 /* ============= Skills Section ============= */
 .skills {
   padding: 5rem 0 8rem;
-  background: hsla(35, 30%, 92%, 0.3);
+  background: hsla(195, 60%, 95%, 0.35);
 }
 
 .skills-subtitle {
@@ -823,7 +854,7 @@ img {
 }
 
 .skill-card:hover {
-  border-color: hsla(25, 95%, 53%, 0.3);
+   border-color: hsla(195, 90%, 55%, 0.35);
   transform: translateY(-8px);
 }
 
@@ -836,9 +867,9 @@ img {
 
 .skill-icon {
   padding: 0.75rem;
-  background: hsla(25, 95%, 53%, 0.1);
+  background: hsla(195, 90%, 55%, 0.15);
   border-radius: 0.75rem;
-  color: var(--primary);
+  color: #0096c7;
 }
 
 .skill-header h4 {
@@ -853,8 +884,8 @@ img {
 }
 
 .skill-badge {
-  padding: 0.5rem 1rem;
-  background: var(--secondary);
+   padding: 0.5rem 1rem;
+  background: hsla(195, 60%, 95%, 1);
   border-radius: 9999px;
   font-size: 0.75rem;
   font-weight: 500;
@@ -863,15 +894,15 @@ img {
 }
 
 .skill-badge:hover {
-  background: var(--primary);
-  color: var(--primary-foreground);
+  background: #0096c7;
+  color: white;
   transform: translateY(-2px);
 }
 
 /* ============= Experience Section ============= */
 .experience {
-  padding: 5rem 0 8rem;
-  background: hsla(35, 30%, 92%, 0.3);
+   padding: 5rem 0 8rem;
+  background: hsla(195, 60%, 95%, 0.35);
 }
 
 .experience-list {
@@ -891,7 +922,7 @@ img {
 }
 
 .experience-card:hover {
-  border-color: hsla(25, 95%, 53%, 0.3);
+  border-color: hsla(195, 90%, 55%, 0.35);
 }
 
 .experience-header {
@@ -917,9 +948,9 @@ img {
 
 .experience-icon {
   padding: 0.75rem;
-  background: hsla(25, 95%, 53%, 0.1);
+  background: hsla(195, 90%, 55%, 0.15);
   border-radius: 0.75rem;
-  color: var(--primary);
+  color: #0096c7;
 }
 
 .experience-title-section h3 {
@@ -929,7 +960,7 @@ img {
 }
 
 .company {
-  color: var(--primary);
+ color: #0077b6;
   font-weight: 600;
 }
 
@@ -967,7 +998,7 @@ img {
 }
 
 .bullet {
-  color: var(--primary);
+  color: #0096c7;
   margin-top: 0.125rem;
 }
 
@@ -979,7 +1010,7 @@ img {
 
 .tech-tags span {
   padding: 0.25rem 0.75rem;
-  background: var(--secondary);
+  background: hsla(195, 60%, 95%, 1);
   border-radius: 9999px;
   font-size: 0.75rem;
   font-weight: 500;
@@ -1024,12 +1055,16 @@ img {
 }
 
 .project-glow {
-  position: absolute;
+ position: absolute;
   inset: 0;
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
-  background: radial-gradient(600px circle at 50% 50%, hsla(25, 95%, 53%, 0.15), transparent 40%);
+  background: radial-gradient(
+    600px circle at 50% 50%,
+    hsla(195, 90%, 55%, 0.18),
+    transparent 40%
+  );
 }
 
 .project-card:hover .project-glow {
@@ -1039,7 +1074,12 @@ img {
 .project-image {
   position: relative;
   height: 12rem;
-  background: linear-gradient(135deg, hsla(25, 95%, 53%, 0.1), var(--secondary), var(--muted));
+  background: linear-gradient(
+    135deg,
+    hsla(195, 90%, 55%, 0.15),
+    hsla(200, 80%, 95%, 1),
+    var(--muted)
+  );
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -1048,10 +1088,10 @@ img {
 
 .project-icon {
   padding: 1.5rem;
-  background: hsla(35, 40%, 98%, 0.8);
+  background: hsla(195, 60%, 98%, 0.85);
   backdrop-filter: blur(8px);
   border-radius: 1rem;
-  color: var(--primary);
+  color: #0096c7;
 }
 
 .project-shine {
@@ -1081,7 +1121,7 @@ img {
 }
 
 .project-card:hover .project-content h3 {
-  color: var(--primary);
+  color: #0077b6;
 }
 
 .project-content p {
@@ -1104,8 +1144,8 @@ img {
 
 .project-tech span {
   padding: 0.25rem 0.75rem;
-  background: hsla(25, 95%, 53%, 0.1);
-  color: var(--primary);
+  background: hsla(195, 90%, 55%, 0.15);
+  color: #0096c7;
   border-radius: 9999px;
   font-size: 0.75rem;
   font-weight: 500;
@@ -1124,8 +1164,8 @@ img {
   padding: 0.5rem;
   background: var(--card);
   border-radius: 0.5rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  color: var(--primary);
+  box-shadow: 0 4px 15px rgba(0, 150, 199, 0.2);
+  color: #0096c7;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -1181,20 +1221,20 @@ img {
 }
 
 .contact-card:not(.no-hover):hover {
-  border-color: hsla(25, 95%, 53%, 0.5);
+  border-color: hsla(195, 90%, 55%, 0.5);
 }
 
 .contact-icon {
-  padding: 0.75rem;
-  background: hsla(25, 95%, 53%, 0.1);
+   padding: 0.75rem;
+  background: hsla(195, 90%, 55%, 0.15);
   border-radius: 0.5rem;
-  color: var(--primary);
+  color: #0096c7;
   transition: all 0.3s ease;
 }
 
 .contact-card:not(.no-hover):hover .contact-icon {
-  background: var(--primary);
-  color: var(--primary-foreground);
+ background: #0096c7;
+  color: white;
 }
 
 .contact-label {
@@ -1248,8 +1288,8 @@ img {
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px hsla(25, 95%, 53%, 0.2);
+  border-color: #0096c7;
+  box-shadow: 0 0 0 3px hsla(195, 90%, 55%, 0.25);
 }
 
 .btn-submit {
@@ -1261,7 +1301,7 @@ img {
 .footer {
   padding: 2rem 0;
   border-top: 1px solid var(--border);
-  background: hsla(35, 40%, 98%, 0.5);
+  background: hsla(195, 60%, 98%, 0.6);
 }
 
 .footer-container {
@@ -1304,7 +1344,7 @@ img {
 }
 
 .footer-social a:hover {
-  color: var(--primary);
+ color: #0096c7;
 }
 
 .footer-copyright {
@@ -1316,7 +1356,7 @@ img {
 }
 
 .heart {
-  color: var(--primary);
+  color: #0096c7;
   margin: 0 0.25rem;
 }
 
@@ -1547,8 +1587,9 @@ img {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: #ff7a18;
-    color: #fff;
+    background-color: #0096c7;
+    box-shadow: 0 10px 22px rgba(0, 150, 199, 0.35);
+
     border: none;
     height: 48px;
     padding: 0 28px;
