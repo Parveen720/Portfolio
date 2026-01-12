@@ -92,16 +92,15 @@ projectCards.forEach(card => {
 // ============= Contact Form =============
 const contactForm = document.getElementById('contact-form');
 
+// Remove or comment out this entire block:
 contactForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  
   const submitBtn = contactForm.querySelector('.btn-submit');
   const originalText = submitBtn.innerHTML;
   
   submitBtn.innerHTML = 'Sending...';
   submitBtn.disabled = true;
   
-  // Simulate form submission
   setTimeout(() => {
     alert('Thank you for your message! I will get back to you soon.');
     contactForm.reset();
@@ -109,6 +108,7 @@ contactForm.addEventListener('submit', (e) => {
     submitBtn.disabled = false;
   }, 1000);
 });
+
 
 // ============= Footer Year =============
 document.getElementById('year').textContent = new Date().getFullYear();
