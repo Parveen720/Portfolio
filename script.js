@@ -89,25 +89,46 @@ projectCards.forEach(card => {
   });
 });
 
+
 // ============= Contact Form =============
 const contactForm = document.getElementById('contact-form');
 
-// Remove or comment out this entire block:
-contactForm.addEventListener('submit', (e) => {
+contactForm.addEventListener('submit', async (e) => {
   e.preventDefault();
+
   const submitBtn = contactForm.querySelector('.btn-submit');
   const originalText = submitBtn.innerHTML;
-  
+
   submitBtn.innerHTML = 'Sending...';
   submitBtn.disabled = true;
-  
-  setTimeout(() => {
-    alert('Thank you for your message! I will get back to you soon.');
-    contactForm.reset();
+
+  const formData = new FormData(contactForm);
+  const data = Object.fromEntries(formData.entries());
+
+  try {
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (res.ok) {
+      alert('Message sent successfully! I will get back to you soon.');
+      contactForm.reset();
+    } else {
+      alert('Failed to send message. Please try again later.');
+    }
+  } catch (error) {
+    console.error(error);
+    alert('Something went wrong. Please try again.');
+  } finally {
     submitBtn.innerHTML = originalText;
     submitBtn.disabled = false;
-  }, 1000);
+  }
 });
+
 
 
 // ============= Footer Year =============
